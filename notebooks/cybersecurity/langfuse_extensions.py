@@ -13,15 +13,15 @@ from dsp.trackers.langfuse_tracker import LangfuseTracker
 
 
 class DSPyLangfuseTracker(LangfuseTracker):
-    def call(self, i, o, name=None, score=None, ground_truth=None, **kwargs):
-        trace_client = self.langfuse.trace(input=i, output=o, name=name, metadata=kwargs)
+    def call(self, i, o, name=None, session=None, score=None, ground_truth=None, pred=None, **kwargs):
+        trace_client = self.langfuse.trace(session_id=session, input=i, output=o, name=name, metadata=kwargs)
         # Unpack args if they are being used to pass i, o, etc.
         model = o['model'] if 'model' in o else None
         output = o['choices'][0]['message']['content'] if 'choices' in o else None
         prompt_tokens = o['usage']['prompt_tokens'] if 'usage' in o else None
         completion_tokens = o['usage']['completion_tokens'] if 'usage' in o else None
         date_epoch = o['created'] if 'created' in o else None
-        total_duration = o['additional_kwargs']['total_duration'] if 'additional_kwargs' in o else None
+        total_duration = o['additional_kwargs']['total_duration'] if 'additional_kwargs' in o else 0
         # Convert epoch time to datetime object
         start_time = datetime.fromtimestamp(date_epoch)
         model_parameters = kwargs
@@ -32,7 +32,7 @@ class DSPyLangfuseTracker(LangfuseTracker):
         generation_client = self.langfuse.generation(
             trace_id=trace_client.id,
             start_time=start_time,
-            end_time=(start_time + timedelta(milliseconds=total_duration/1000000)),
+            end_time=(start_time + timedelta(milliseconds=total_duration / 1000000)),
             input=i, output=output, name=name, model=model, usage=usage, model_parameters=model_parameters
         )
         self.langfuse.score(
@@ -55,9 +55,20 @@ class DSPyLangfuseTracker(LangfuseTracker):
                 name="ground_truth",
                 value=ground_truth
             )
+        if pred:
+            self.langfuse.score(
+                trace_id=trace_client.id,
+                observation_id=generation_client.id,  # optional
+                name="prediction",
+                value=pred
+            )
 
 
 class EvaluateWithLangfuse(Evaluate):
+
+    def __init__(self, run_id, **kwargs):
+        self.run_id = run_id
+        super().__init__(**kwargs)
 
     def __call__(
             self,
@@ -69,7 +80,6 @@ class EvaluateWithLangfuse(Evaluate):
             display_table=None,
             return_all_scores=None,
             return_outputs=None,
-            tracker=None
     ):
         metric = metric if metric is not None else self.metric
         devset = devset if devset is not None else self.devset
@@ -96,10 +106,13 @@ class EvaluateWithLangfuse(Evaluate):
                     example,
                     prediction,
                 )  # FIXME: TODO: What's the right order? Maybe force name-based kwargs!
+                model = program.lm.model_name if program.lm.provider=="ollama" else program.lm.kwargs['model']
                 program.lm.tracker_call(tracker=langfuse,
-                                        name=f"Evaluation-{example_idx}",
+                                        session=self.run_id,
+                                        name=f"Evaluation-{model}-{example_idx}",
                                         score=1.0 if score else 0.0,
-                                        ground_truth=example.output.label)
+                                        ground_truth=example.output.label,
+                                        pred=prediction.output.label)
                 # increment assert and suggest failures to program's attributes
                 if hasattr(program, "_assert_failures"):
                     program._assert_failures += dspy.settings.get("assert_failures")

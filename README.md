@@ -19,3 +19,23 @@ cd ext/langfuse
 docker compose up -d
 docker compose logs -f
 ```
+
+## Environment variables
+```bash
+AZURE_OPENAI_API_KEY=xxx
+LANGFUSE_HOST=http://localhost:3000;
+LANGFUSE_PUBLIC_KEY=pk-xxx
+LANGFUSE_SECRET_KEY=sk-xxx
+```
+
+
+## Finetuning with torchtune
+Ensure you use torchtune from the virtual environment managed by poetry.
+```bash
+poetry shell
+which tune
+```
+should return something like:
+```text
+/Users/xxx/Library/Caches/pypoetry/virtualenvs/llmops-webinar-h7IZpbbf-py3.12/bin/tune
+```
