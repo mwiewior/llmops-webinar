@@ -1,0 +1,40 @@
+{
+  "generate_answer.predictor": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "input": "{\"text\":\"\\t<Forwarded from 448712404000>Please CALL 08712404000 immediately as there is an urgent message waiting for you.\"}",
+        "output": "{\"label\":\"smishing\"}"
+      },
+      {
+        "augmented": true,
+        "input": "{\"text\":\"HMV BONUS SPECIAL 500 pounds of genuine HMV vouchers to be won. Just answer 4 easy questions. Send HMV to 86688 More info:www.100percent-real.com\"}",
+        "output": "{\"label\":\"spam\"}"
+      },
+      {
+        "input": "{\"text\":\"Good. do you think you could send me some pix? I would love to see your top and bottom...\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Can you do online transaction?\"}",
+        "output": "{\"label\":\"ham\"}"
+      }
+    ],
+    "signature": {
+      "instructions": "Given an SMS text, predict whether it is ham, spam, or smishing.\nOutput only the predicted label.",
+      "fields": [
+        {
+          "prefix": "Input:",
+          "description": "${input}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    }
+  }
+}

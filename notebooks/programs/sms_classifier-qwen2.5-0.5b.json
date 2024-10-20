@@ -1,0 +1,56 @@
+{
+  "generate_answer.predictor": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "input": "{\"text\":\"You will recieve your tone within the next 24hrs. For Terms and conditions please see Channel U Teletext Pg 750\"}",
+        "output": "{\"label\":\"spam\"}"
+      },
+      {
+        "augmented": true,
+        "input": "{\"text\":\"\\t5 Free Top Polyphonic Tones call 087018728737, National Rate. Get a toppoly tune sent every week, just text SUBPOLY to 81618, \u00a33 per pole. UnSub 08718727870.\"}",
+        "output": "{\"label\":\"spam\"}"
+      },
+      {
+        "input": "{\"text\":\"BankOfAmerica Alert 137943. Please follow http:\/\/bit.do\/cgjK-and re-activate\"}",
+        "output": "{\"label\":\"smishing\"}"
+      },
+      {
+        "input": "{\"text\":\"New Offer! Save upto 40\\\\% electricity bill with Power Saver(GOVT. LAB TESTED), Rs. 1050\/-(free home delivery) 3 Yr. Guarantee Call 9891943823,9891943780\"}",
+        "output": "{\"label\":\"spam\"}"
+      },
+      {
+        "input": "{\"text\":\"House-Maid is the murderer, coz the man was murdered on  26th January.. \"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Sorry i missed your call. Can you please call back.\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Jane babes not goin 2 wrk, feel ill after lst nite. Foned in already cover 4 me chuck.:-)\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"it's still not working. And this time i also tried adding zeros. That was the savings. The checking is  &lt;#&gt;\"}",
+        "output": "{\"label\":\"ham\"}"
+      }
+    ],
+    "signature": {
+      "instructions": "Given an SMS text, predict whether it is ham, spam, or smishing.\nOutput only the predicted label.",
+      "fields": [
+        {
+          "prefix": "Input:",
+          "description": "${input}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    }
+  }
+}
