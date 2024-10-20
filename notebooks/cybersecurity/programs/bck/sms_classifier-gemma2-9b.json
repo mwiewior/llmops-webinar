@@ -21,22 +21,6 @@
       {
         "input": "{\"text\":\"Can you do online transaction?\"}",
         "output": "{\"label\":\"ham\"}"
-      },
-      {
-        "input": "{\"text\":\"Good Morning plz call me sir..I have an urgent work..\"}",
-        "output": "{\"label\":\"ham\"}"
-      },
-      {
-        "input": "{\"text\":\"Noida Commercial Wave Sec-18  Silver @ 11500\/- PSF  Gold @ 12500\/- PSF,  Logix Sec-124 @ 8200\/- PSF For Best Deal Call 9711131802 \/3\"}",
-        "output": "{\"label\":\"spam\"}"
-      },
-      {
-        "input": "{\"text\":\"Jane babes not goin 2 wrk, feel ill after lst nite. Foned in already cover 4 me chuck.:-)\"}",
-        "output": "{\"label\":\"ham\"}"
-      },
-      {
-        "input": "{\"text\":\"Ok lor. Anyway i thk we cant get tickets now cos like quite late already. U wan 2 go look 4 ur frens a not? Darren is wif them now...\"}",
-        "output": "{\"label\":\"ham\"}"
       }
     ],
     "signature": {

@@ -1,0 +1,58 @@
+{
+  "generate_answer.predictor": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "input": "{\"text\":\"I'm e person who's doing e sms survey...\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "augmented": true,
+        "input": "{\"text\":\"Wow didn't think it was that common. I take it all back ur not a freak! Unless u chop it off:-)\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "augmented": true,
+        "input": "{\"text\":\"I don't have anybody's number, I still haven't thought up a tactful way to ask alex\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "augmented": true,
+        "input": "{\"text\":\"\\tTodays Voda numbers ending 7548 are selected to receive a $350 award. If you have a match please call 08712300220 quoting claim code 4041 standard rates app\"}",
+        "output": "{\"label\":\"smishing\"}"
+      },
+      {
+        "input": "{\"text\":\"Wat r u doing now?\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Oh shut it. Omg yesterday I had a dream that I had 2 kids both boys. I was so pissed. Not only about the kids but them being boys. I even told mark in my dream that he was changing diapers cause I'm not getting owed in the face.\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Was actually sleeping and still might when u call back. So a text is gr8. You rock sis. Will send u a text wen i wake.\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Every day i use to sleep after  &lt;#&gt;  so only.\"}",
+        "output": "{\"label\":\"ham\"}"
+      }
+    ],
+    "signature": {
+      "instructions": "Given an SMS text, predict whether it is ham, spam, or smishing.\nOutput only the predicted label.",
+      "fields": [
+        {
+          "prefix": "Input:",
+          "description": "${input}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    }
+  }
+}
