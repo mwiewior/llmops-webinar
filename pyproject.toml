@@ -13,6 +13,8 @@ torch = "^2.5.0"
 torchvision = "^0.20.0"
 torchao = "^0.5.0"
 torchtune = "^0.3.1"
+mlx = "^0.19.0"
+mlx-lm = "^0.19.1"
 
 [build-system]
 requires = ["poetry-core"]

@@ -163,3 +163,4 @@ cython_debug/
 .idea
 notebooks/cybersecurity/programs/bck/
 notebooks/programs/bck/
+finetune/adapters
