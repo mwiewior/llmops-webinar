@@ -1,5 +1,9 @@
 from langfuse import Langfuse
 
+import matplotlib.pyplot as plt
+import numpy as np
+
+
 langfuse = Langfuse()
 
 
@@ -58,3 +62,28 @@ def calculate_metrics(results, classes):
     metrics["macro"]["recall"] = sum([metrics[c]["recall"] for c in classes]) / len(classes)
     metrics["macro"]["f1"] = sum([metrics[c]["f1"] for c in classes]) / len(classes)
     return metrics
+
+
+
+
+def plot_metrics(metrics, labels, title):
+    x = np.arange(len(labels))  # the label locations
+    width = 0.10  # the width of the bars
+    fig, ax = plt.subplots()
+    k = 0
+    for m in metrics:
+        ax.bar(
+            x + width * k,
+            [metrics[m]["precision"], metrics[m]["recall"], metrics[m]["f1"]],
+            width,
+            label=m,
+            )
+        k += 1
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    ax.set_ylabel("Scores")
+    ax.set_title(title)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.05), shadow=True, ncol=4)
+    ax.grid(True)
+    fig.set_size_inches(10, 5)
+    plt.show()

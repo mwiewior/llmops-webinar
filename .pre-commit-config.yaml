@@ -6,8 +6,8 @@ repos:
      additional_dependencies: [black==24.10.0]
    - id: nbqa-pyupgrade
      additional_dependencies: [pyupgrade==2.7.3]
-   - id: nbqa-isort
-     additional_dependencies: [isort==5.6.4]
+#   - id: nbqa-isort
+#     additional_dependencies: [isort==5.6.4]
 - repo: https://github.com/kynan/nbstripout
   rev: 0.7.1
   hooks:

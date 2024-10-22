@@ -6,11 +6,17 @@
     "demos": [
       {
         "augmented": true,
-        "input": "{\"text\":\"I know she called me\"}",
+        "input": "{\"text\":\"Howz pain?hope u r fine..\"}",
         "output": "{\"label\":\"ham\"}"
       },
       {
-        "input": "{\"text\":\"Hello. They are going to the village pub at 8 so either come here or there accordingly. Ok?\"}",
+        "augmented": true,
+        "input": "{\"text\":\"Ok i thk i got it. Then u wan me 2 come now or wat?\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "augmented": true,
+        "input": "{\"text\":\"Ok lor\ufffdwhats up\ufffd\"}",
         "output": "{\"label\":\"ham\"}"
       },
       {
@@ -18,24 +24,20 @@
         "output": "{\"label\":\"smishing\"}"
       },
       {
-        "input": "{\"text\":\"Love it! The girls at the office may wonder why you are smiling but sore...\"}",
+        "input": "{\"text\":\"IM GONNAMISSU SO MUCH!!I WOULD SAY IL SEND U A POSTCARD BUTTHERES ABOUTAS MUCH CHANCE OF MEREMEMBERIN ASTHERE IS OFSI NOT BREAKIN HIS CONTRACT!! LUV Yaxx\"}",
         "output": "{\"label\":\"ham\"}"
       },
       {
-        "input": "{\"text\":\"What you doing?how are you?\"}",
+        "input": "{\"text\":\"I'm taking derek &amp; taylor to walmart, if I'm not back by the time you're done just leave the mouse on my desk and I'll text you when priscilla's ready\"}",
         "output": "{\"label\":\"ham\"}"
       },
       {
-        "input": "{\"text\":\"\\t<Forwarded from 448712404000>Please CALL 08712404000 immediately as there is an urgent message waiting for you.\"}",
-        "output": "{\"label\":\"smishing\"}"
-      },
-      {
-        "input": "{\"text\":\"Haha figures, well I found the piece and priscilla's bowl\"}",
+        "input": "{\"text\":\"What's up my own oga. Left my phone at home and just saw ur messages. Hope you are good. Have a great weekend.\"}",
         "output": "{\"label\":\"ham\"}"
       },
       {
-        "input": "{\"text\":\"Mm i had my food da from out\"}",
-        "output": "{\"label\":\"ham\"}"
+        "input": "{\"text\":\"\\t5 Free Top Polyphonic Tones call 087018728737, National Rate. Get a toppoly tune sent every week, just text SUBPOLY to 81618, \u00a33 per pole. UnSub 08718727870.\"}",
+        "output": "{\"label\":\"spam\"}"
       }
     ],
     "signature": {

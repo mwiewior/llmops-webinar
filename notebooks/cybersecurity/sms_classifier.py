@@ -34,7 +34,7 @@ class SMSClassifier(dspy.Module):
         super().__init__()
         dspy.configure(lm=lm)
         self.generate_answer = dspy.TypedPredictor(
-            SMSClassifierSignature, max_retries=1
+            SMSClassifierSignature, max_retries=5
         )
 
     def forward(self, input):
