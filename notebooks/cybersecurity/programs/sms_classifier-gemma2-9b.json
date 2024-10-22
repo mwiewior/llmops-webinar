@@ -1,0 +1,56 @@
+{
+  "generate_answer.predictor": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "input": "{\"text\":\"\\t<Forwarded from 448712404000>Please CALL 08712404000 immediately as there is an urgent message waiting for you.\"}",
+        "output": "{\"label\":\"smishing\"}"
+      },
+      {
+        "augmented": true,
+        "input": "{\"text\":\"HMV BONUS SPECIAL 500 pounds of genuine HMV vouchers to be won. Just answer 4 easy questions. Send HMV to 86688 More info:www.100percent-real.com\"}",
+        "output": "{\"label\":\"spam\"}"
+      },
+      {
+        "input": "{\"text\":\"Good. do you think you could send me some pix? I would love to see your top and bottom...\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Can you do online transaction?\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Good Morning plz call me sir..I have an urgent work..\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Noida Commercial Wave Sec-18  Silver @ 11500\/- PSF  Gold @ 12500\/- PSF,  Logix Sec-124 @ 8200\/- PSF For Best Deal Call 9711131802 \/3\"}",
+        "output": "{\"label\":\"spam\"}"
+      },
+      {
+        "input": "{\"text\":\"Jane babes not goin 2 wrk, feel ill after lst nite. Foned in already cover 4 me chuck.:-)\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Ok lor. Anyway i thk we cant get tickets now cos like quite late already. U wan 2 go look 4 ur frens a not? Darren is wif them now...\"}",
+        "output": "{\"label\":\"ham\"}"
+      }
+    ],
+    "signature": {
+      "instructions": "Given an SMS text, predict whether it is ham, spam, or smishing.\nOutput only the predicted label.",
+      "fields": [
+        {
+          "prefix": "Input:",
+          "description": "${input}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    }
+  }
+}

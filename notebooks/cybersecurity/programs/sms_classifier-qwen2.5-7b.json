@@ -1,0 +1,56 @@
+{
+  "generate_answer.predictor": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "input": "{\"text\":\"Every day i use to sleep after  &lt;#&gt;  so only.\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "augmented": true,
+        "input": "{\"text\":\"Your opinion about me? 1. Over 2. Jada 3. Kusruthi 4. Lovable 5. Silent 6. Spl character 7. Not matured 8. Stylish 9. Simple Pls reply..\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"no, i *didn't* mean to post it. I wrote it, and like so many other times i've ritten stuff to you, i let it sit there. it WAS what i was feeling at the time. I was angry. Before i left, i hit send, then stop. It wasn't there. I checked on my phone when i got to my car. It wasn't there. You said you didn't sleep, you were bored. So why wouldn't THAT be the time to clean, fold laundry, etc.? At least make the bed?\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"New Offer! Save upto 40\\\\% electricity bill with Power Saver(GOVT. LAB TESTED), Rs. 1050\/-(free home delivery) 3 Yr. Guarantee Call 9891943823,9891943780\"}",
+        "output": "{\"label\":\"spam\"}"
+      },
+      {
+        "input": "{\"text\":\"BankOfAmerica Alert 137943. Please follow http:\/\/bit.do\/cgjK-and re-activate\"}",
+        "output": "{\"label\":\"smishing\"}"
+      },
+      {
+        "input": "{\"text\":\"What * u wearing?\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"UR awarded a City Break and could WIN a \u00a3200 Summer Shopping spree every WK. Txt STORE to 88039 . SkilGme. TsCs087147403233\"}",
+        "output": "{\"label\":\"smishing\"}"
+      },
+      {
+        "input": "{\"text\":\"I don't quite know what to do. I still can't get hold of anyone. I cud pick you up bout 7.30pm and we can see if they're in the pub?\"}",
+        "output": "{\"label\":\"ham\"}"
+      }
+    ],
+    "signature": {
+      "instructions": "Given an SMS text, predict whether it is ham, spam, or smishing.\nOutput only the predicted label.",
+      "fields": [
+        {
+          "prefix": "Input:",
+          "description": "${input}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    }
+  }
+}

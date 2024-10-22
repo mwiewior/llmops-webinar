@@ -1,0 +1,57 @@
+{
+  "generate_answer.predictor": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "input": "{\"text\":\"Howz pain?hope u r fine..\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "augmented": true,
+        "input": "{\"text\":\"Ok i thk i got it. Then u wan me 2 come now or wat?\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "augmented": true,
+        "input": "{\"text\":\"Ok lor\ufffdwhats up\ufffd\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Please Stay At Home. To encourage the notion of staying at home. All tax-paying citizens are entitled to \ufffd305.96 or more emergency refund. smsg.io\/fCVbD\"}",
+        "output": "{\"label\":\"smishing\"}"
+      },
+      {
+        "input": "{\"text\":\"IM GONNAMISSU SO MUCH!!I WOULD SAY IL SEND U A POSTCARD BUTTHERES ABOUTAS MUCH CHANCE OF MEREMEMBERIN ASTHERE IS OFSI NOT BREAKIN HIS CONTRACT!! LUV Yaxx\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"I'm taking derek &amp; taylor to walmart, if I'm not back by the time you're done just leave the mouse on my desk and I'll text you when priscilla's ready\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"What's up my own oga. Left my phone at home and just saw ur messages. Hope you are good. Have a great weekend.\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"\\t5 Free Top Polyphonic Tones call 087018728737, National Rate. Get a toppoly tune sent every week, just text SUBPOLY to 81618, \u00a33 per pole. UnSub 08718727870.\"}",
+        "output": "{\"label\":\"spam\"}"
+      }
+    ],
+    "signature": {
+      "instructions": "Given an SMS text, predict whether it is ham, spam, or smishing.\nOutput only the predicted label.",
+      "fields": [
+        {
+          "prefix": "Input:",
+          "description": "${input}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    }
+  }
+}

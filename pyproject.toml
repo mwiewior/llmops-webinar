@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "llmops-webinar"
+version = "0.1.0"
+description = ""
+authors = ["Marek Wieiwórka <marek.wiewiorka@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+dspy-ai = "^2.5.12"
+langfuse = "^2.52.1"
+torch = "^2.5.0"
+torchvision = "^0.20.0"
+torchao = "^0.5.0"
+torchtune = "^0.3.1"
+mlx = "^0.19.0"
+mlx-lm = "^0.19.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dev-dependencies]
+pre-commit = "2.20.0"
+jupyter = "1.0.0"
+nbqa = { version = "^1.9.0", extras=["toolchain"] }
+nbstripout = "^0.7.1"
+black = "^24.10.0"

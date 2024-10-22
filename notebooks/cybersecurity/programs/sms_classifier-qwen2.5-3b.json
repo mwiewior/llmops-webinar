@@ -1,0 +1,58 @@
+{
+  "generate_answer.predictor": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "input": "{\"text\":\"Thnx dude. u guys out 2nite?\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "augmented": true,
+        "input": "{\"text\":\"Love it! The girls at the office may wonder why you are smiling but sore...\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "augmented": true,
+        "input": "{\"text\":\"I'm taking derek &amp; taylor to walmart, if I'm not back by the time you're done just leave the mouse on my desk and I'll text you when priscilla's ready\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "augmented": true,
+        "input": "{\"text\":\"\\tTodays Voda numbers ending 7548 are selected to receive a $350 award. If you have a match please call 08712300220 quoting claim code 4041 standard rates app\"}",
+        "output": "{\"label\":\"smishing\"}"
+      },
+      {
+        "input": "{\"text\":\"Please Stay At Home. To encourage the notion of staying at home. All tax-paying citizens are entitled to \ufffd305.96 or more emergency refund. smsg.io\/fCVbD\"}",
+        "output": "{\"label\":\"smishing\"}"
+      },
+      {
+        "input": "{\"text\":\"HMV BONUS SPECIAL 500 pounds of genuine HMV vouchers to be won. Just answer 4 easy questions. Send HMV to 86688 More info:www.100percent-real.com\"}",
+        "output": "{\"label\":\"spam\"}"
+      },
+      {
+        "input": "{\"text\":\"Wat r u doing now?\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Meeting u is my work. . . Tel me when shall i do my work tomorrow\ufffd.That is what matters\ufffd\"}",
+        "output": "{\"label\":\"ham\"}"
+      }
+    ],
+    "signature": {
+      "instructions": "Given an SMS text, predict whether it is ham, spam, or smishing.\nOutput only the predicted label.",
+      "fields": [
+        {
+          "prefix": "Input:",
+          "description": "${input}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    }
+  }
+}

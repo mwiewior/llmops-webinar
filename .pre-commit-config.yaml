@@ -1,0 +1,12 @@
+repos:
+- repo: https://github.com/nbQA-dev/nbQA
+  rev: 1.9.0
+  hooks:
+   - id: nbqa-black
+     additional_dependencies: [black==24.10.0]
+   - id: nbqa-pyupgrade
+     additional_dependencies: [pyupgrade==2.7.3]
+- repo: https://github.com/kynan/nbstripout
+  rev: 0.7.1
+  hooks:
+    - id: nbstripout
