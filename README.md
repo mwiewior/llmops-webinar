@@ -1,6 +1,6 @@
 # llmops-webinar
 
-## Dependencies
+## Prerequisites
 
 ### Software
 * Python >=3.12

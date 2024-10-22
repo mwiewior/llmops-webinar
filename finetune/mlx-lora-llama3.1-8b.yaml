@@ -64,8 +64,8 @@ lora_parameters:
   dropout: 0.1
 
 # Schedule can only be specified in a config file, uncomment to use.
-#lr_schedule:
-#  name: cosine_decay
-#  warmup: 100 # 0 for no warmup
-#  warmup_init: 1e-7 # 0 if not specified
-#  arguments: [1e-5, 10000, 1e-7] # passed to scheduler
+lr_schedule:
+  name: cosine_decay
+  warmup: 100 # 0 for no warmup
+  warmup_init: 1e-7 # 0 if not specified
+  arguments: [1e-5, 10000, 1e-7] # passed to scheduler
