@@ -1,0 +1,55 @@
+{
+  "generate_answer.predictor": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "input": "{\"text\":\"I know she called me\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Hello. They are going to the village pub at 8 so either come here or there accordingly. Ok?\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Please Stay At Home. To encourage the notion of staying at home. All tax-paying citizens are entitled to \ufffd305.96 or more emergency refund. smsg.io\/fCVbD\"}",
+        "output": "{\"label\":\"smishing\"}"
+      },
+      {
+        "input": "{\"text\":\"Love it! The girls at the office may wonder why you are smiling but sore...\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"What you doing?how are you?\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"\\t<Forwarded from 448712404000>Please CALL 08712404000 immediately as there is an urgent message waiting for you.\"}",
+        "output": "{\"label\":\"smishing\"}"
+      },
+      {
+        "input": "{\"text\":\"Haha figures, well I found the piece and priscilla's bowl\"}",
+        "output": "{\"label\":\"ham\"}"
+      },
+      {
+        "input": "{\"text\":\"Mm i had my food da from out\"}",
+        "output": "{\"label\":\"ham\"}"
+      }
+    ],
+    "signature": {
+      "instructions": "Given an SMS text, predict whether it is ham, spam, or smishing.\nOutput only the predicted label.",
+      "fields": [
+        {
+          "prefix": "Input:",
+          "description": "${input}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    }
+  }
+}

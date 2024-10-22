@@ -16,14 +16,14 @@ lora_layers: 16
 batch_size: 1
 
 # Iterations to train for.
-iters: 30000
+iters: 20000
 
 # Number of validation batches, -1 uses the entire validation set.
 val_batches: 25
 
 # Adam learning rate.
 ##best so far: 1e-5
-learning_rate: 1e-5
+learning_rate: 1e-6
 
 # Number of training steps between loss reporting.
 steps_per_report: 10
@@ -32,7 +32,7 @@ steps_per_report: 10
 steps_per_eval: 100
 
 # Load path to resume training with the given adapter weights.
-resume_adapter_file: adapters/adapters-4k-f1_0_6144/adapters.safetensors
+resume_adapter_file: adapters/adapters-7k-f1-0_6408/adapters.safetensors
 
 # Save/load path for the trained adapter weights.
 adapter_path: "adapters"
@@ -64,8 +64,8 @@ lora_parameters:
   dropout: 0.1
 
 # Schedule can only be specified in a config file, uncomment to use.
-lr_schedule:
-  name: cosine_decay
-  warmup: 100 # 0 for no warmup
-  warmup_init: 1e-7 # 0 if not specified
-  arguments: [1e-5, 10000, 1e-7] # passed to scheduler
+#lr_schedule:
+#  name: cosine_decay
+#  warmup: 100 # 0 for no warmup
+#  warmup_init: 1e-7 # 0 if not specified
+#  arguments: [1e-5, 10000, 1e-7] # passed to scheduler
